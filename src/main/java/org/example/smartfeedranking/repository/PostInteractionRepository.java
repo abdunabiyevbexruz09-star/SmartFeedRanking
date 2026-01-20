@@ -11,6 +11,5 @@ import java.util.Optional;
 
 public interface PostInteractionRepository extends JpaRepository<PostInteraction, Long> {
 
-    Optional<PostInteraction> findByPostAndUserAndType(Post post, User user, Type type);
-    List<PostInteraction> findByPostAndType(Post post, Type type);
+    boolean existsByPostAndType(Post post, Type type);
 }
