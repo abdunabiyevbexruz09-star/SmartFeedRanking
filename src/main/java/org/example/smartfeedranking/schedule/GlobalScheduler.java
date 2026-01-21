@@ -11,26 +11,28 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class GlobalSchedular {
+public class GlobalScheduler {
 
     private final RedisTemplate<String, String> redisTemplate;
     private final PostRepository postRepository;
 
-    @Scheduled(fixedRate = 20 * 1000)
-    public void flushScoreFromRedisToDb() {
+    @Scheduled(fixedRate = 5 * 60 * 1000)
+    public void counter() {
 
         List<Post> posts = postRepository.findAll();
 
         for (Post post : posts) {
+
             String key = "post:" + post.getId() + ":score";
             String redisValue = redisTemplate.opsForValue().get(key);
 
             if (redisValue == null) continue;
 
-            long redisScore = Long.parseLong(redisValue);
-            post.setScore(post.getScore() + redisScore);
+            long deltaScore = Long.parseLong(redisValue);
 
+            post.setScore(post.getScore() + deltaScore);
             postRepository.save(post);
+
             redisTemplate.delete(key);
         }
     }

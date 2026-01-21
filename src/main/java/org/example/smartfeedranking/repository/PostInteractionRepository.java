@@ -10,6 +10,4 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PostInteractionRepository extends JpaRepository<PostInteraction, Long> {
-
-    boolean existsByPostAndType(Post post, Type type);
 }
