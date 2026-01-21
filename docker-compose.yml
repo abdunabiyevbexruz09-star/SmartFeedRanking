@@ -1,6 +1,6 @@
 services:
-  shop_postgres:
-    container_name: shop_postgres
+  feed_rank:
+    container_name: feed_rank
     image: postgres:13.3
     environment:
       - POSTGRES_USER=Marco
@@ -10,8 +10,8 @@ services:
       - '5444:5444'
     volumes:
       - postgres-data:/var/lib/postgresql/data
-  shop_redis:
-    container_name: shop_redis
+  feed_rank_redis:
+    container_name: feed_rank
     image: redis/redis-stack:latest
     ports:
-      - "6379:6379"
+      - "6333:6333"
