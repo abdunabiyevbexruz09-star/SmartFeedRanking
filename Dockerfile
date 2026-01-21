@@ -9,7 +9,7 @@ COPY src/main/resources/db /db
 COPY src/main/resources/banner /banner
 
 
-EXPOSE 8080
+EXPOSE 8083
 
 # Run app
 CMD ["java", "-jar", "app.jar"]
