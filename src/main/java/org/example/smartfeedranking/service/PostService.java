@@ -65,7 +65,5 @@ public class PostService {
         LocalDateTime from = LocalDateTime.now().minusHours(24);
 
         return postRepository.findByCreatedAtAfterOrderByScoreDesc(from);
-
-
     }
 }
