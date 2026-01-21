@@ -3,7 +3,7 @@ spring:
     name: SmartFeedRanking
 
   datasource:
-    url: jdbc:postgresql://localhost:5444/feed_rank
+    url: jdbc:postgresql://172.17.0.1:5444/feed_rank
     username: postgres
     password: 1234
     driver-class-name: org.postgresql.Driver
