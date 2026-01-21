@@ -18,8 +18,8 @@ import java.time.Duration;
 public class AppConfig {
 
     @Bean
-    public RedisTemplate<Long, Long> redisTemplate(RedisConnectionFactory connectionFactory) {
-        RedisTemplate<Long, Long> template = new RedisTemplate<>();
+    public RedisTemplate<String, Long> redisTemplate(RedisConnectionFactory connectionFactory) {
+        RedisTemplate<String, Long> template = new RedisTemplate<>();
         template.setConnectionFactory(connectionFactory);
         return template;
     }

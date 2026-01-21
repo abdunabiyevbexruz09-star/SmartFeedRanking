@@ -24,7 +24,7 @@ public class PostService {
 
     private final PostRepository postRepository;
     private final PostInteractionRepository interactionRepository;
-    private final RedisTemplate<String, String> redisTemplate;
+    private final RedisTemplate<String, Long> redisTemplate;
 
     public Post createPost(String content) {
         Post post = Post.builder()
@@ -51,7 +51,7 @@ public class PostService {
 
         interactionRepository.save(interaction);
 
-        String key = "post:" + postId + ":score";
+        String key = "post:" + postId + ":score" + post.getScore();
 
         long delta = switch (type) {
             case LIKE -> 1;

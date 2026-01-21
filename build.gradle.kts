@@ -33,9 +33,6 @@ dependencies {
     // Redis Client
     implementation("redis.clients:jedis:5.2.0")
 
-    // Minio
-    implementation("io.minio:minio:8.6.0")
-
     // OpenAPI
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0")
 
@@ -45,11 +42,6 @@ dependencies {
     // Lombok
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
-
-    // JWT
-    implementation("io.jsonwebtoken:jjwt-api:0.11.5")
-    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
-    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
 
     // Mapstruct
     implementation("org.mapstruct:mapstruct:1.5.5.Final")
