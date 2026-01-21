@@ -26,7 +26,9 @@ public class GlobalScheduler {
             String key = "post:" + post.getId() + ":score";
             String redisValue = redisTemplate.opsForValue().get(key);
 
-            if (redisValue == null) continue;
+            if (redisValue == null) {;
+                continue;
+            }
 
             long deltaScore = Long.parseLong(redisValue);
 
