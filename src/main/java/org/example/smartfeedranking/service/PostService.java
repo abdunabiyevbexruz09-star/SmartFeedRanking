@@ -51,7 +51,7 @@ public class PostService {
 
         interactionRepository.save(interaction);
 
-        String key = "post:" + postId + ":score" + post.getScore();
+        String key = "post:" + postId + ":score";
 
         long delta = switch (type) {
             case LIKE -> 1;
